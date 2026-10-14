@@ -1,7 +1,11 @@
 import streamlit as st
 import requests
+from dotenv import load_dotenv
+import os
 
-API_KEY = '5568e5f5501752be1a504eb7c35f8a32'
+load_dotenv()  # Load environment variables from .env file.Checks any environment variable in the .env file and loads it into the environment   
+
+API_KEY = os.getenv("WEATHER_API_KEY")  # Get the API key from environment variable
 st.set_page_config(page_title='Weather Forecast App',page_icon="https://img.freepik.com/premium-photo/sun-moon-emoji-set-white-background_41969-14626.jpg")
 
 st.title("weather forecast ")
